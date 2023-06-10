@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script defer src="./script.js"></script>
-         <link rel="stylesheet" href="./style.css" type="text/css" />
-         <title>Aaron Hemphill - Phase 1 Assesment Project</title>
-         <body id = "body">
-            <h1 id = "header"> Secret Somm </h1>
-            <h4> find a great wine wherever you are</h4>
+  <head>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <title>Aaron Hemphill - Phase 1 Assesment Project</title>
+    <body id="body">
+      <h1 id="header" class="text">Secret Somm</h1>
+      <h4 id="caption" class="text">find great wine wherever you are!</h4>
 
-         </body>
-    </head>
+      <div class="container">
+        <form id = "form" class="addWineForm">
+          <h3 class = "addWine">Add a wine you've found!</h3>
+
+          <input class = "submits"
+            type="text"
+            name="name"
+            value=""
+            placeholder="Enter a wine's name..."
+            class="input-text"
+          />
+          <br />
+          <input class = "submits"
+            type="text"
+            name="image"
+            value=""
+            placeholder="Enter a wine's image URL..."
+            class="input-text"
+          />
+          <br />
+          <input class = "submits"
+            type="submit"
+            name="submit"
+            value="Submit Wine"
+            class="submit"
+          />
+        </form>
+      </div>
+    </body>
+  </head>
 </html>

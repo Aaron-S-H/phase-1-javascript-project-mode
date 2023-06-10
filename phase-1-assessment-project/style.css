@@ -1,0 +1,32 @@
+#body {
+    background-color: cornsilk;
+}
+
+#header {
+    font-size: 75px;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#caption {
+   font-size: 25px;
+   text-align: center;
+   border-top: 2%;
+}
+
+.text {
+    color: maroon;
+}
+h3 {
+    padding-top: 2%;
+    color: cornsilk;
+}
+.addWineForm {
+    text-align: center;
+background-color: maroon;
+padding-bottom: 2%;
+  
+}
+.submits{
+    margin-bottom: 1%;
+}
