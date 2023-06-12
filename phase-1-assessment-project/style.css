@@ -18,15 +18,23 @@
     color: maroon;
 }
 h3 {
+    text-align: center;
     padding-top: 2%;
-    color: cornsilk;
+    color: maroon;
 }
 .addWineForm {
     text-align: center;
-background-color: maroon;
 padding-bottom: 2%;
-  
+  opacity: 100;
+}
+
+.addWine:hover {
+    color: black;
+    font-size: 150%;
 }
 .submits{
     margin-bottom: 1%;
+}
+.hidden{
+    display: none;
 }
