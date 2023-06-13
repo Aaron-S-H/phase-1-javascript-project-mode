@@ -9,7 +9,9 @@
     "year": 2021,
     "origin": "France",
     "alcohol": "13%",
-    "price": "$8.99"
+    "price": "$8.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 
 },
 
@@ -22,7 +24,9 @@
     "year": 2021,
     "origin": "France",
     "alcohol": "12.5%",
-    "price": "$12.99"
+    "price": "$12.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 {
     "id": 3,
@@ -33,7 +37,9 @@
     "year": 2020,
     "origin": "France",
     "alcohol": "14%",
-    "price": "$7.99"
+    "price": "$7.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 {
     "id": 4,
@@ -44,7 +50,9 @@
     "year": 2020,
     "origin": "Italy",
     "alcohol": "13.5%",
-    "price": "$11.99"
+    "price": "$11.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 {
     "id": 5,
@@ -55,7 +63,9 @@
     "year": 2017,
     "origin": "Italy",
     "alcohol": "13%",
-    "price": "$15.99"
+    "price": "$15.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 {
     "id": 6,
@@ -66,7 +76,9 @@
     "year": 2020,
     "origin": "Spain",
     "alcohol": "14%",
-    "price": "$6.99"
+    "price": "$6.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 
 {
@@ -78,7 +90,9 @@
     "year": 2022,
     "origin": "Italy",
     "alcohol": "12.5%",
-    "price": "$7.99"
+    "price": "$7.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 
 {
@@ -90,7 +104,9 @@
     "year": 2020,
     "origin": "France",
     "alcohol": "13%",
-    "price": "$22.99"
+    "price": "$22.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 
 {
@@ -102,7 +118,9 @@
     "year": 2020,
     "origin": "California",
     "alcohol": "11.5%",
-    "price": "$16.99"
+    "price": "$16.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 
 {
@@ -114,7 +132,9 @@
     "year": 2020,
     "origin": "France",
     "alcohol": "11.5%",
-    "price": "$20.99"
+    "price": "$20.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 },
 
 {
@@ -126,7 +146,9 @@
     "year": 2021,
     "origin": "Italy",
     "alcohol": "12%",
-    "price": "$10.99"
+    "price": "$10.99",
+    "userRatings" : 0,
+    "averageUserRating" : 0 
 }
 
 ]
