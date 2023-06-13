@@ -2,12 +2,133 @@
     "wines": [
 {
     "id": 1,
+    "name": "La Vieille Ferme",
+    "color": "red",
+    "frontImageURL": "photos/laVielleFerme_front.jpg" ,
+    "backImageURL": "photos/laVielleFerme_back.jpg" ,
+    "year": 2021,
+    "origin": "France",
+    "alcohol": "13%",
+    "price": "$8.99"
 
+},
+
+{
+    "id": 2,
+    "name": "Barton & Guestier",
+    "color": "red",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2021,
+    "origin": "France",
+    "alcohol": "12.5%",
+    "price": "$12.99"
+},
+{
+    "id": 3,
+    "name": "Les Dauphins",
+    "color": "red",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2020,
+    "origin": "France",
+    "alcohol": "14%",
+    "price": "$7.99"
+},
+{
+    "id": 4,
+    "name": "Primitivo Negroamaro",
+    "color": "red",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2020,
+    "origin": "Italy",
+    "alcohol": "13.5%",
+    "price": "$11.99"
+},
+{
+    "id": 5,
+    "name": "Molise",
+    "color": "red",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2017,
+    "origin": "Italy",
+    "alcohol": "13%",
+    "price": "$15.99"
+},
+{
+    "id": 6,
+    "name": "Ramon",
+    "color": "red",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2020,
+    "origin": "Spain",
+    "alcohol": "14%",
+    "price": "$6.99"
+},
+
+{
+    "id": 7,
+    "name": "Doppio Passo",
+    "color": "white",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2022,
+    "origin": "Italy",
+    "alcohol": "12.5%",
+    "price": "$7.99"
+},
+
+{
+    "id": 8,
+    "name": "B&G",
+    "color": "white",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2020,
+    "origin": "France",
+    "alcohol": "13%",
+    "price": "$22.99"
+},
+
+{
+    "id": 9,
+    "name": "Gallo",
+    "color": "white",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2020,
+    "origin": "California",
+    "alcohol": "11.5%",
+    "price": "$16.99"
+},
+
+{
+    "id": 10,
+    "name": "Rendez Vous",
+    "color": "white",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2020,
+    "origin": "France",
+    "alcohol": "11.5%",
+    "price": "$20.99"
+},
+
+{
+    "id": 11,
+    "name": "Latentia",
+    "color": "white",
+    "frontImageURL": ,
+    "backImageURL": ,
+    "year": 2021,
+    "origin": "Italy",
+    "alcohol": "12%",
+    "price": "$10.99"
 }
 
-
-
-
-    ]
-
+]
 }
+
