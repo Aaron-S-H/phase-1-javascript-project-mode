@@ -18,7 +18,7 @@ function getAllWines() {
 }
 
 function wineHandler(wine) {
-    const collection = document.querySelector("#wineList");
+    const collection = document.querySelector("ul");
     let card = document.createElement("li");
     card.className = "card";
     card.innerHTML = `
@@ -35,8 +35,10 @@ function wineHandler(wine) {
     <option value="0">0</option>
     </select>
     `;
+    collection.appendChild(card);
+
 }
-collection.appendChild(card);
+
 
 
 
