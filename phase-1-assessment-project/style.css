@@ -17,7 +17,7 @@
 .text {
     color: maroon;
 }
-h3 {
+h2 {
     text-align: center;
     padding-top: 2%;
     color: maroon;
@@ -100,15 +100,7 @@ body {
     color: #e04b52;
   }
   
-  .container {
-    padding: 1rem;
-    width: stretch;
-    height: auto;
-    display: none;
-    background: #515DA2;
-    opacity: .8;
-  }
-  
+
   .add-toy-form {
     width: 80%
   }
