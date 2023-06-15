@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     card.className = "card";
     let cardFront = `
     <h2 class = "cardFront">${wine.name}</h2>
-    <h3>Origin: ${wine.origin}<br>
-       ${wine.year}</h3>
+    <p>Origin: ${wine.origin}<br>
+       ${wine.year}</p>
     <img src="${wine.frontImageURL}" class="wine-photo"/>
     <br>
     <select name="userRatings" class="ratings">
@@ -38,13 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
     <option value="2">2</option>
     <option value="1">1</option>
     </select>
-    <br>
+
     <p class="ratings">average user rating: ${wine.averageUserRating}</p>
     `;
     let cardBack = `
     <h2 class = "cardBack">${wine.name}</h2>
-    <h3>Origin: ${wine.alcohol}<br>
-       ${wine.price}</h3>
+    <p>Alcohol: ${wine.alcohol}<br>
+       Price: ${wine.price}</p>
     <img src="${wine.backImageURL}" class="wine-photo"/>
     <br>
     <select name="userRatings" class="ratings">
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <option value="2">2</option>
     <option value="1">1</option>
     </select>
-    <br>
     <p class="ratings">average user rating: ${wine.averageUserRating}</p>
     `;
     card.innerHTML = cardFront;
@@ -68,10 +67,32 @@ document.addEventListener("DOMContentLoaded", () => {
         card.innerHTML = cardFront;
       }
       const dropDown = document.querySelector(".ratings");
-      const rating = dropDown.children;
-      dropDown.addEventListener("change", () => console.log(dropDown.value));
+      
+    //   const rating = dropDown.value;
+      dropDown.addEventListener("change",() => {wine.yourRating = dropDown.value;
+        wine.userRatings += dropDown.value; wine.numberOfRatings += 1; wine.averageUserRating = wine.userRatings/wine.numberOfRatings;
+        updateRatings(wine);
+
+
+    });
     });
 
     collection.appendChild(card);
+
+    function updateRatings(wine){
+        fetch(`http://localhost:3000/wines/${wine.id}`,{
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify(wine),
+        }) .then((res) => res.json());
+    }
   }
 });
+
+function dropDownWork(value) {
+    wine.yourRating = value;
+        wine.userRatings += value; wine.numberOfRatings += 1; wine.averageUserRating = wine.userRatings / wine.numberOfRatings;
+        updateRatings(wine);
+}
