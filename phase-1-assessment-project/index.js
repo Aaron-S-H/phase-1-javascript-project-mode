@@ -1,23 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    getAllWines();
+  getAllWines();
 
+  const input = document.querySelector("input");
+  const form = document.getElementById("form");
+  const addWine = document.querySelector(".addWine");
+  const addWineForm = document.querySelector(".addWineForm");
+  addWine.addEventListener("click", () => {
+    if (form.className === "hidden") {
+      form.className = "addWineForm";
+    } else {
+      form.className = "hidden";
+    }
+  });
 
-
-const input = document.querySelector("input");
-const form = document.getElementById("form");
-const addWine = document.querySelector(".addWine");
-const addWineForm = document.querySelector(".addWineForm");
-addWine.addEventListener("click",()=>  { if(form.className === "hidden"){form.className = "addWineForm"; }
-else{form.className = "hidden";}});
-
-
-function getAllWines() {
+  function getAllWines() {
     fetch("http://localhost:3000/wines")
-    .then((res) => res.json())
-    .then((wineData) => wineData.forEach((wine) => wineHandler(wine)));
-}
+      .then((res) => res.json())
+      .then((wineData) => wineData.forEach((wine) => wineHandler(wine)));
+  }
 
-function wineHandler(wine) {
+  function wineHandler(wine) {
     const collection = document.querySelector("ul");
     let card = document.createElement("li");
     let h2 = document.querySelector("h2");
@@ -38,8 +40,7 @@ function wineHandler(wine) {
     </select>
     <br>
     <p class="ratings">average user rating: ${wine.averageUserRating}</p>
-    `
-    ;
+    `;
     let cardBack = `
     <h2 class = "cardBack">${wine.name}</h2>
     <h3>Origin: ${wine.alcohol}<br>
@@ -56,21 +57,21 @@ function wineHandler(wine) {
     </select>
     <br>
     <p class="ratings">average user rating: ${wine.averageUserRating}</p>
-    `
-    ;
-
+    `;
     card.innerHTML = cardFront;
 
     let img = card.querySelector(".wine-photo");
-    img.addEventListener("mouseover",() => { if(wine.year){card.innerHTML = cardBack;}
-    else{card.innerHTML = cardFront;}
+    img.addEventListener("mouseover", () => {
+      if (wine.year) {
+        card.innerHTML = cardBack;
+      } else {
+        card.innerHTML = cardFront;
+      }
+      const dropDown = document.querySelector(".ratings");
+      const rating = dropDown.children;
+      dropDown.addEventListener("change", () => console.log(dropDown.value));
     });
-   
 
     collection.appendChild(card);
-
-}
-
-
-
+  }
 });
