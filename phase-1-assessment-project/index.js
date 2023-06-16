@@ -23,14 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const collection = document.querySelector("ul");
     let card = document.createElement("li");
     let h2 = document.querySelector("h2");
-    card.setAttribute('id', `${wine.id}`);
+    card.className = "card";
+    const form = document.getElementById("form");
     let cardFront = `
     <h2 class = "cardFront">${wine.name}</h2>
-    <p>Origin: ${wine.origin}<br>
-       ${wine.year}</p>
-    <img src="${wine.frontImageURL}" id="wine-photo${wine.id}"/>
+    <p>origin: ${wine.origin}<br>
+      year: ${wine.year}<br>
+       price: ${wine.price}</p>
+    <img src="${wine.frontImageURL}" class="wine-photo"/>
     <br>
-    <select name="userRatings" class="ratings">
+    <select name="userRatings" class="ratings" id="select">
     <option value="">Rate This Wine</option>
     <option value="5">5</option>
     <option value="4">4</option>
@@ -38,43 +40,22 @@ document.addEventListener("DOMContentLoaded", () => {
     <option value="2">2</option>
     <option value="1">1</option>
     </select>
-
-    <p class="ratings">average user rating: ${wine.averageUserRating}</p>
+    <p class="yourRating></p>
     `;
-    let cardBack = `
-    <h2 class = "cardBack">${wine.name}</h2>
-    <p>Alcohol: ${wine.alcohol}<br>
-       Price: ${wine.price}</p>
-    <img src="${wine.backImageURL}" id="wine-photo${wine.id}"/>
-    <br>
-    <select name="userRatings" class="ratings">
-    <option value="">Rate This Wine</option>
-    <option value="5">5</option>
-    <option value="4">4</option>
-    <option value="3">3</option>
-    <option value="2">2</option>
-    <option value="1">1</option>
-    </select>
-    <p class="ratings">average user rating: ${wine.averageUserRating}</p>
-    `;
+    
     card.innerHTML = cardFront;
 
-    let img = card.querySelector("#wine-photo");
+    let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
       if (wine.year) {
-        card.innerHTML = cardBack;
+        img.src = wine.backImageURL;
       } else {
-        card.innerHTML = cardFront;
+        img.src = wine.frontImageURL;
       }
-      const dropDown = document.querySelector(".ratings");
+      let dropDown = document.querySelector(".ratings");
       
     //   const rating = dropDown.value;
-      dropDown.addEventListener("change",() => {wine.yourRating = dropDown.value;
-        wine.userRatings += dropDown.value; wine.numberOfRatings += 1; wine.averageUserRating = wine.userRatings/wine.numberOfRatings;
-        updateRatings(wine);
-
-
-    });
+      card.querySelector(".ratings").addEventListener("change",(event) => console.log(event.target.value));
     });
 
     collection.appendChild(card);
@@ -92,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//this one in the callback 
+//this one in the callback
 function dropDownWork(value) {
     wine.yourRating = value;
         wine.userRatings += value; wine.numberOfRatings += 1; wine.averageUserRating = wine.userRatings / wine.numberOfRatings;

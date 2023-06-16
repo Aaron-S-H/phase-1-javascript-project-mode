@@ -10,7 +10,7 @@
       "origin": "France",
       "alcohol": "13%",
       "price": "$8.99",
-      "yourRating": 2
+      "yourRating": 0
     },
     {
       "id": 2,
@@ -22,7 +22,8 @@
       "origin": "France",
       "alcohol": "12.5%",
       "price": "$12.99",
-      "yourRating": 5
+      "yourRating": 3
+     
     },
     {
       "id": 3,
@@ -34,8 +35,8 @@
       "origin": "France",
       "alcohol": "14%",
       "price": "$7.99",
-      "yourRating": 5
-    },
+      "yourRating":0
+    } 
     {
       "id": 4,
       "name": "Primitivo Negroamaro",
@@ -46,7 +47,8 @@
       "origin": "Italy",
       "alcohol": "13.5%",
       "price": "$11.99",
-      "yourRating": 3
+      "yourRating": 0
+      
     },
     {
       "id": 5,
@@ -119,7 +121,6 @@
       "alcohol": "11.5%",
       "price": "$20.99",
       "yourRating": 0
-
     },
     {
       "id": 11,
@@ -132,7 +133,6 @@
       "alcohol": "12%",
       "price": "$10.99",
       "yourRating": 0
-
     }
   ]
 }
