@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const collection = document.querySelector("ul");
     let card = document.createElement("li");
     let h2 = document.querySelector("h2");
-    card.className = "card";
+    card.setAttribute('id', `${wine.id}`);
     let cardFront = `
     <h2 class = "cardFront">${wine.name}</h2>
     <p>Origin: ${wine.origin}<br>
        ${wine.year}</p>
-    <img src="${wine.frontImageURL}" class="wine-photo"/>
+    <img src="${wine.frontImageURL}" id="wine-photo${wine.id}"/>
     <br>
     <select name="userRatings" class="ratings">
     <option value="">Rate This Wine</option>
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 class = "cardBack">${wine.name}</h2>
     <p>Alcohol: ${wine.alcohol}<br>
        Price: ${wine.price}</p>
-    <img src="${wine.backImageURL}" class="wine-photo"/>
+    <img src="${wine.backImageURL}" id="wine-photo${wine.id}"/>
     <br>
     <select name="userRatings" class="ratings">
     <option value="">Rate This Wine</option>
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     card.innerHTML = cardFront;
 
-    let img = card.querySelector(".wine-photo");
+    let img = card.querySelector("#wine-photo");
     img.addEventListener("mouseover", () => {
       if (wine.year) {
         card.innerHTML = cardBack;
@@ -91,6 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+//this one in the callback 
 function dropDownWork(value) {
     wine.yourRating = value;
         wine.userRatings += value; wine.numberOfRatings += 1; wine.averageUserRating = wine.userRatings / wine.numberOfRatings;

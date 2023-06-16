@@ -10,10 +10,7 @@
       "origin": "France",
       "alcohol": "13%",
       "price": "$8.99",
-      "yourRating": "2",
-      "userRatings": "03242",
-      "numberOfRatings": 6,
-      "averageUserRating": 540.3333333333334
+      "yourRating": 2
     },
     {
       "id": 2,
@@ -25,10 +22,7 @@
       "origin": "France",
       "alcohol": "12.5%",
       "price": "$12.99",
-      "yourRating": "4",
-      "userRatings": "034",
-      "numberOfRatings": 5,
-      "averageUserRating": 6.8
+      "yourRating": 5
     },
     {
       "id": 3,
@@ -40,10 +34,7 @@
       "origin": "France",
       "alcohol": "14%",
       "price": "$7.99",
-      "yourRating": "",
-      "userRatings": "03",
-      "numberOfRatings": 3,
-      "averageUserRating": 1
+      "yourRating": 5
     },
     {
       "id": 4,
@@ -55,10 +46,7 @@
       "origin": "Italy",
       "alcohol": "13.5%",
       "price": "$11.99",
-      "yourRating": "2",
-      "userRatings": "02",
-      "numberOfRatings": 1,
-      "averageUserRating": 2
+      "yourRating": 3
     },
     {
       "id": 5,
@@ -70,10 +58,7 @@
       "origin": "Italy",
       "alcohol": "13%",
       "price": "$15.99",
-      "yourRating": "2",
-      "userRatings": "02",
-      "numberOfRatings": 2,
-      "averageUserRating": 1
+      "yourRating": 2
     },
     {
       "id": 6,
@@ -85,10 +70,7 @@
       "origin": "Spain",
       "alcohol": "14%",
       "price": "$6.99",
-      "yourRating": "2",
-      "userRatings": "02",
-      "numberOfRatings": 2,
-      "averageUserRating": 1
+      "yourRating": 2
     },
     {
       "id": 7,
@@ -100,10 +82,7 @@
       "origin": "Italy",
       "alcohol": "12.5%",
       "price": "$7.99",
-      "yourRating": "",
-      "userRatings": "0",
-      "numberOfRatings": 1,
-      "averageUserRating": 0
+      "yourRating": 0
     },
     {
       "id": 8,
@@ -115,10 +94,7 @@
       "origin": "France",
       "alcohol": "13%",
       "price": "$22.99",
-      "yourRating": "2",
-      "userRatings": "02",
-      "numberOfRatings": 2,
-      "averageUserRating": 1
+      "yourRating": 2
     },
     {
       "id": 9,
@@ -130,10 +106,7 @@
       "origin": "California",
       "alcohol": "11.5%",
       "price": "$16.99",
-      "yourRating": 0,
-      "userRatings": 0,
-      "numberOfRatings": 0,
-      "averageUserRating": 0
+      "yourRating": 0
     },
     {
       "id": 10,
@@ -145,10 +118,8 @@
       "origin": "France",
       "alcohol": "11.5%",
       "price": "$20.99",
-      "yourRating": 0,
-      "userRatings": 0,
-      "numberOfRatings": 0,
-      "averageUserRating": 0
+      "yourRating": 0
+
     },
     {
       "id": 11,
@@ -160,10 +131,8 @@
       "origin": "Italy",
       "alcohol": "12%",
       "price": "$10.99",
-      "yourRating": 0,
-      "userRatings": 0,
-      "numberOfRatings": 0,
-      "averageUserRating": 0
+      "yourRating": 0
+
     }
   ]
 }
