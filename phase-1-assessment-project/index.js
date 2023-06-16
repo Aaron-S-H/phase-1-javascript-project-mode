@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <option value="2">2</option>
     <option value="1">1</option>
     </select>
-    <p class="yourRating></p>
+   <br>
+   <p class="yourRating> your rating:</p>
     `;
     
     card.innerHTML = cardFront;
@@ -52,11 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         img.src = wine.frontImageURL;
       }
-      let dropDown = document.querySelector(".ratings");
+    //   let dropDown = document.querySelector(".ratings");
       
     //   const rating = dropDown.value;
-      card.querySelector(".ratings").addEventListener("change",(event) => console.log(event.target.value));
+      card.querySelector(".ratings").addEventListener("change", (e) => { wine.totalUserRatings +=1;
+        wine.yourRating = parseInt(e.target.value); wine.ratingsTally += parseInt(e.target.value);
+        wine.averageUserRating = wine.ratingsTally/wine.totalUserRatings
+    ;
+    console.log(wine.averageUserRating);
     });
+  });
 
     collection.appendChild(card);
 
@@ -72,7 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
+// {wine.yourRating = e.target.value;
+//     card.querySelector(".yourRating").textContent = `your rating: ${wine.yourRating}` }
 //this one in the callback
 function dropDownWork(value) {
     wine.yourRating = value;
