@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
     <img src="${wine.frontImageURL}" class="wine-photo"/>
     <br>
     <select name="userRatings" class="ratings" id="select">
-    <option value="">Rate This Wine</option>
-    <option value="5">5</option>
-    <option value="4">4</option>
-    <option value="3">3</option>
-    <option value="2">2</option>
-    <option value="1">1</option>
+    <option value="0">Rate This Wine</option>
+    <option value="5">your rating: 5</option>
+    <option value="4">your rating: 4</option>
+    <option value="3">your rating: 3</option>
+    <option value="2">your rating: 2</option>
+    <option value="1">your rating: 1</option>
     </select>
    <br>
     `;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
-      if (wine.year) {
+      if (wine.frontImageURL) {
         img.src = wine.backImageURL;
       } else {
         img.src = wine.frontImageURL;
@@ -78,11 +78,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// {wine.yourRating = e.target.value;
-//     card.querySelector(".yourRating").textContent = `your rating: ${wine.yourRating}` }
-//this one in the callback
-function dropDownWork(value) {
-    wine.yourRating = value;
-        wine.userRatings += value; wine.numberOfRatings += 1; wine.averageUserRating = wine.userRatings / wine.numberOfRatings;
-        updateRatings(wine);
-}
+
