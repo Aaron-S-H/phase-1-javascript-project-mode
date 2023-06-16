@@ -10,10 +10,10 @@
       "origin": "France",
       "alcohol": "13%",
       "price": "$8.99",
-      "yourRating": 0,
-      "totalUserRatings": 0,
-      "ratingsTally": 0,
-      "averageUserRating": 0
+      "yourRating": 5,
+      "totalUserRatings": 75,
+      "ratingsTally": 247,
+      "averageUserRating": 4
     },
     {
       "id": 2,
@@ -25,11 +25,10 @@
       "origin": "France",
       "alcohol": "12.5%",
       "price": "$12.99",
-      "yourRating": 3,
-      "totalUserRatings": 0,
-      "ratingsTally": 0,
-      "averageUserRating": 0
-     
+      "yourRating": 4,
+      "totalUserRatings": 16,
+      "ratingsTally": 37,
+      "averageUserRating": 3
     },
     {
       "id": 3,
@@ -41,11 +40,11 @@
       "origin": "France",
       "alcohol": "14%",
       "price": "$7.99",
-      "yourRating":0,
-      "totalUserRatings": 0,
-      "ratingsTally": 0,
-      "averageUserRating": 0
-    }, 
+      "yourRating": 5,
+      "totalUserRatings": 4,
+      "ratingsTally": 14,
+      "averageUserRating": 4
+    },
     {
       "id": 4,
       "name": "Primitivo Negroamaro",
@@ -56,11 +55,10 @@
       "origin": "Italy",
       "alcohol": "13.5%",
       "price": "$11.99",
-      "yourRating": 0,
-      "totalUserRatings": 0,
-      "ratingsTally": 0,
-      "averageUserRating": 0
-      
+      "yourRating": 5,
+      "totalUserRatings": 4,
+      "ratingsTally": 16,
+      "averageUserRating": 4
     },
     {
       "id": 5,
@@ -87,10 +85,10 @@
       "origin": "Spain",
       "alcohol": "14%",
       "price": "$6.99",
-      "yourRating": 2,
-      "totalUserRatings": 0,
-      "ratingsTally": 0,
-      "averageUserRating": 0
+      "yourRating": 4,
+      "totalUserRatings": 1,
+      "ratingsTally": 4,
+      "averageUserRating": 4
     },
     {
       "id": 7,
@@ -117,10 +115,10 @@
       "origin": "France",
       "alcohol": "13%",
       "price": "$22.99",
-      "yourRating": 2,
-      "totalUserRatings": 0,
-      "ratingsTally": 0,
-      "averageUserRating": 0
+      "yourRating": 3,
+      "totalUserRatings": 1,
+      "ratingsTally": 3,
+      "averageUserRating": 3
     },
     {
       "id": 9,

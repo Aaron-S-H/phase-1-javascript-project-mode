@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let cardFront = `
     <h2 class = "cardFront">${wine.name}</h2>
     <p>origin: ${wine.origin}<br>
-      year: ${wine.year}<br>
-       price: ${wine.price}</p>
+      year: ${wine.year}<br></p>
+      <p class="avgRtng">average user rating: ${wine.averageUserRating}</p>
     <img src="${wine.frontImageURL}" class="wine-photo"/>
     <br>
     <select name="userRatings" class="ratings" id="select">
@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <option value="1">1</option>
     </select>
    <br>
-   <p class="yourRating> your rating:</p>
     `;
     
     card.innerHTML = cardFront;
@@ -58,9 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //   const rating = dropDown.value;
       card.querySelector(".ratings").addEventListener("change", (e) => { wine.totalUserRatings +=1;
         wine.yourRating = parseInt(e.target.value); wine.ratingsTally += parseInt(e.target.value);
-        wine.averageUserRating = wine.ratingsTally/wine.totalUserRatings
+        wine.averageUserRating = Math.ceil(wine.ratingsTally/wine.totalUserRatings);
+        card.querySelector(".avgRtng").textContent = `average user rating: ${wine.averageUserRating}`;
     ;
-    console.log(wine.averageUserRating);
+   updateRatings(wine);
     });
   });
 
