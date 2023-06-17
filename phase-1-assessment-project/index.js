@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const input = document.querySelector("input");
   const form = document.getElementById("form");
   const addWine = document.querySelector(".addWine");
-  const addWineForm = document.querySelector(".addWineForm");
+//   const addWineForm = document.querySelector(".addWineForm");
   addWine.addEventListener("click", () => {
     if (form.className === "hidden") {
       form.className = "addWineForm";
@@ -18,6 +18,41 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((res) => res.json())
       .then((wineData) => wineData.forEach((wine) => wineHandler(wine)));
   }
+
+  function updateNewWine(wineObj) {
+    fetch("http://localhost:3000/wines", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(wineObj),
+    })
+      .then((res) => res.json())
+      .then(wineHandler(wineObj));
+  }
+
+const inputName = document.getElementById("inputName");
+const inputUrl = document.getElementById("inputURL");
+const inputOrigin = document.getElementById("inputOrigin");
+const inputYear = document.getElementById("inputYear");
+  document.querySelector("#submitNew").addEventListener("click", (event) => {
+    event.preventDefault();
+    let wineObj = {
+      name: inputName.value,
+      frontImageURL: inputUrl.value,
+      backImageURL: inputUrl.value,
+      year: inputYear.value,
+      origin: inputOrigin.value,
+      yourRating: 0,
+      totalUserRatings: 0,
+      ratingsTally: 0,
+      averageUserRating: 0
+
+}
+ updateNewWine(wineObj);
+});
+  
+ 
 
   function wineHandler(wine) {
     const collection = document.querySelector("ul");
@@ -45,6 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     
     card.innerHTML = cardFront;
+    function removeWine(id){
+        fetch(`http://localhost:3000/wines/${id}`,{
+            method:"DELETE",
+            headers: {
+                "Conent-Type" : "applkication/json"
+            }
+        })
+        .then(res => res.json())
+        .then(wine => console.log(wine))
+      }
 card.querySelector("#removeWine").addEventListener('click', () => {
     card.remove();
     removeWine(wine.id);

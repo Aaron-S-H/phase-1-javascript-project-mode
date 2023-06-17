@@ -164,6 +164,26 @@
       "totalUserRatings": 1,
       "ratingsTally": 3,
       "averageUserRating": 3
+    },
+    {
+      "name": "Gingy",
+      "frontImageURL": "photos/latentia_front.jpg",
+      "backImageURL": "photos/latentia_front.jpg",
+      "year": "1456",
+      "origin": "tuscon",
+      "id": 13
+    },
+    {
+      "name": "Chico",
+      "frontImageURL": "photos/latentia_front.jpg",
+      "backImageURL": "photos/latentia_front.jpg",
+      "year": "1888",
+      "origin": "Utah",
+      "yourRating": 0,
+      "totalUserRatings": 0,
+      "ratingsTally": 0,
+      "averageUserRating": 0,
+      "id": 14
     }
   ]
 }
