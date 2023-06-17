@@ -43,13 +43,16 @@ const inputYear = document.getElementById("inputYear");
       backImageURL: inputUrl.value,
       year: inputYear.value,
       origin: inputOrigin.value,
+      price: 0,
       yourRating: 0,
       totalUserRatings: 0,
       ratingsTally: 0,
-      averageUserRating: 0
+      averageUserRating: 0,
+      id: ""
 
 }
  updateNewWine(wineObj);
+
 });
   
  
@@ -88,7 +91,7 @@ const inputYear = document.getElementById("inputYear");
             }
         })
         .then(res => res.json())
-        .then(wine => console.log(wine))
+        // .then(wine => console.log(wine))
       }
 card.querySelector("#removeWine").addEventListener('click', () => {
     card.remove();
@@ -102,19 +105,6 @@ card.querySelector("#removeWine").addEventListener('click', () => {
         img.src = wine.frontImageURL;
       };
 
-      function removeWine(id){
-        fetch(`http://localhost:3000/wines/${id}`,{
-            method:"DELETE",
-            headers: {
-                "Conent-Type" : "applkication/json"
-            }
-        })
-        .then(res => res.json())
-        .then(wine => console.log(wine))
-      }
-    //   let dropDown = document.querySelector(".ratings");
-      
-    //   const rating = dropDown.value;
       card.querySelector(".ratings").addEventListener("change", (e) => { wine.totalUserRatings +=1;
         wine.yourRating = parseInt(e.target.value); wine.ratingsTally += parseInt(e.target.value);
         wine.averageUserRating = Math.ceil(wine.ratingsTally/wine.totalUserRatings);
