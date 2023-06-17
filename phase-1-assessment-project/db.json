@@ -10,10 +10,10 @@
       "origin": "France",
       "alcohol": "13%",
       "price": "$8.99",
-      "yourRating": 2,
-      "totalUserRatings": 3,
-      "ratingsTally": 11,
-      "averageUserRating": 4
+      "yourRating": 5,
+      "totalUserRatings": 5,
+      "ratingsTally": 21,
+      "averageUserRating": 5
     },
     {
       "id": 2,

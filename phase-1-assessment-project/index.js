@@ -40,17 +40,32 @@ document.addEventListener("DOMContentLoaded", () => {
     <option value="2">your rating: 2</option>
     <option value="1">your rating: 1</option>
     </select>
+    <button id="removeWine"> remove this wine</button>
    <br>
     `;
     
     card.innerHTML = cardFront;
-
+card.querySelector("#removeWine").addEventListener('click', () => {
+    card.remove();
+    removeWine(wine.id);
+})
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
-      if (wine.frontImageURL) {
+      if (wine.year) {
         img.src = wine.backImageURL;
       } else {
         img.src = wine.frontImageURL;
+      };
+
+      function removeWine(id){
+        fetch(`http://localhost:3000/wines/${id}`,{
+            method:"DELETE",
+            headers: {
+                "Conent-Type" : "applkication/json"
+            }
+        })
+        .then(res => res.json())
+        .then(wine => console.log(wine))
       }
     //   let dropDown = document.querySelector(".ratings");
       
@@ -59,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
         wine.yourRating = parseInt(e.target.value); wine.ratingsTally += parseInt(e.target.value);
         wine.averageUserRating = Math.ceil(wine.ratingsTally/wine.totalUserRatings);
         card.querySelector(".avgRtng").textContent = `average user rating: ${wine.averageUserRating}`;
-    ;
    updateRatings(wine);
     });
   });
