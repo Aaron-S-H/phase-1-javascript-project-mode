@@ -7,10 +7,10 @@
       "year": 2021,
       "origin": "France",
       "price": "$8.99",
-      "yourRating": 5,
-      "totalUserRatings": 5,
-      "ratingsTally": 21,
-      "averageUserRating": 5,
+      "yourRating": 2,
+      "totalUserRatings": 8,
+      "ratingsTally": 27,
+      "averageUserRating": 4,
       "id": 1
     },
     {
@@ -20,9 +20,9 @@
       "year": 2021,
       "origin": "France",
       "price": "$12.99",
-      "yourRating": 1,
-      "totalUserRatings": 11,
-      "ratingsTally": 31,
+      "yourRating": 4,
+      "totalUserRatings": 12,
+      "ratingsTally": 35,
       "averageUserRating": 3,
       "id": 2
     },

@@ -6,7 +6,9 @@
     <title>Aaron Hemphill - Phase 1 Assesment Project</title>
     <body id="body">
       <h1 id="header" class="text">Secret Somm</h1>
-      <h4 id="caption" class="text">find great wine wherever you are!</h4>
+      <h2 id="caption">Find great wine wherever you are!</h2><br>
+      
+
 
       <div class="container">
         <h2 class = "addWine" >Add a wine you've found!</h2>
@@ -51,7 +53,19 @@
             class="submit"
           />
         </form>
+        
       </div>
+      <div id = "regionMenu">
+      <label id="regionDisplay" for="select-wine">Display wines from :</label>
+      <select  id = "regions" name="select-wine">
+        <option value=""></option>
+        <option value="France">France</option>
+        <option value="Italy">Italy</option>
+        <option value="Spain">Spain</option>
+        <option value="California">California</option>
+        <option value="All">All</option>
+      </select>
+    </div>
       <div id = "wines">
 <ul id = "wineList">
     </ul>       

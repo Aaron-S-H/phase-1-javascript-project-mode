@@ -13,6 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  function updateRatings(wine){
+    fetch(`http://localhost:3000/wines/${wine.id}`,{
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body:JSON.stringify(wine),
+    }) .then((res) => res.json());
+}
+
+
   function getAllWines() {
     fetch("http://localhost:3000/wines")
       .then((res) => res.json())
@@ -111,20 +122,19 @@ card.querySelector("#removeWine").addEventListener('click', () => {
         card.querySelector(".avgRtng").textContent = `average user rating: ${wine.averageUserRating}`;
    updateRatings(wine);
     });
+
+
   });
 
     collection.appendChild(card);
+function fetchWineByRegion(){
+    collection.innerHTML = "";
+    fetch("http://localhost:3000/wines",
+)
 
-    function updateRatings(wine){
-        fetch(`http://localhost:3000/wines/${wine.id}`,{
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body:JSON.stringify(wine),
-        }) .then((res) => res.json());
-    }
-  }
-});
+}
+    document.getElementById("regions").addEventListener("change", (event) => console.log(event.target.value)
+    );
+}});
 
 
