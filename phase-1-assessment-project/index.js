@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  getAllWines();
+  getAllWines(); 
 
   const input = document.querySelector("input");
   const form = document.getElementById("form");
@@ -28,7 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:3000/wines")
       .then((res) => res.json())
       .then((wineData) => wineData.forEach((wine) => wineHandler(wine)));
+      
   }
+
+function getFilteredWines(value) {
+    fetch("http://localhost:3000/wines")
+    .then((res) => res.json())
+    .then((wineData) => wineData.filter(() => filteredWines(value)));
+    function filteredWines(value){
+           const fltrWines = wineData.filter(wine => wine.origin === value);
+             fltrWines.forEach((wine) => wineHandler(wine));
+    
+        
+           }
+        
+        };
+    
+    
+
 
   function updateNewWine(wineObj) {
     fetch("http://localhost:3000/wines", {
@@ -127,14 +144,17 @@ card.querySelector("#removeWine").addEventListener('click', () => {
   });
 
     collection.appendChild(card);
-function fetchWineByRegion(){
-    collection.innerHTML = "";
-    fetch("http://localhost:3000/wines",
-)
 
-}
-    document.getElementById("regions").addEventListener("change", (event) => console.log(event.target.value)
-    );
+
+    // function filteredWines(array, value){
+    //     const allWines =  document.getElementById("wineList")
+    //     const fltrWines = array.filter(wine => wine.origin === value);
+    //     fltrWines.forEach((wine) => wineHandler(wine));
+    // }
+    
+
+    document.getElementById("regions").addEventListener("change", (event) => getFilteredWines(event.target.value)
+    )
 }});
 
 
