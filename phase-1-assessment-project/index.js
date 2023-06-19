@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  getAllWines(); 
+  getAllWines();
 
   const input = document.querySelector("input");
   const form = document.getElementById("form");
   const addWine = document.querySelector(".addWine");
-//   const addWineForm = document.querySelector(".addWineForm");
+
   addWine.addEventListener("click", () => {
     if (form.className === "hidden") {
       form.className = "addWineForm";
@@ -13,41 +13,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function updateRatings(wine){
-    fetch(`http://localhost:3000/wines/${wine.id}`,{
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body:JSON.stringify(wine),
-    }) .then((res) => res.json());
-}
-
+  function updateRatings(wine) {
+    fetch(`http://localhost:3000/wines/${wine.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(wine),
+    }).then((res) => res.json());
+  }
 
   function getAllWines() {
     fetch("http://localhost:3000/wines")
       .then((res) => res.json())
       .then((wineData) => wineData.forEach((wine) => wineHandler(wine)));
-      
   }
 
-function getFilteredWines(value) {
+  function getFilteredWines(value) {
     const page = document.getElementById("wineList");
     page.innerHTML = "";
-     fetch("http://localhost:3000/wines")
-    .then((res) => res.json())
-    .then((wineData) => {
+    fetch("http://localhost:3000/wines")
+      .then((res) => res.json())
+      .then((wineData) => {
         page.innerHTML = "";
-        let filteredWines = wineData.filter(wine => wine.origin === value);
-        filteredWines.forEach(wineHandler)});
-    }
-    
- 
-        
-        
-    
-    
-
+        let filteredWines = wineData.filter((wine) => wine.origin === value);
+        filteredWines.forEach(wineHandler);
+      });
+  }
 
   function updateNewWine(wineObj) {
     fetch("http://localhost:3000/wines", {
@@ -61,10 +53,10 @@ function getFilteredWines(value) {
       .then(wineHandler(wineObj));
   }
 
-const inputName = document.getElementById("inputName");
-const inputUrl = document.getElementById("inputURL");
-const inputOrigin = document.getElementById("inputOrigin");
-const inputYear = document.getElementById("inputYear");
+  const inputName = document.getElementById("inputName");
+  const inputUrl = document.getElementById("inputURL");
+  const inputOrigin = document.getElementById("inputOrigin");
+  const inputYear = document.getElementById("inputYear");
   document.querySelector("#submitNew").addEventListener("click", (event) => {
     event.preventDefault();
     let wineObj = {
@@ -78,14 +70,10 @@ const inputYear = document.getElementById("inputYear");
       totalUserRatings: 0,
       ratingsTally: 0,
       averageUserRating: 0,
-      id: ""
-
-}
- updateNewWine(wineObj);
-
-});
-  
- 
+      id: "",
+    };
+    updateNewWine(wineObj);
+  });
 
   function wineHandler(wine) {
     const collection = document.querySelector("ul");
@@ -111,62 +99,48 @@ const inputYear = document.getElementById("inputYear");
     <button id="removeWine"> remove this wine</button>
    <br>
     `;
-    
+
     card.innerHTML = cardFront;
-    function removeWine(id){
-        fetch(`http://localhost:3000/wines/${id}`,{
-            method:"DELETE",
-            headers: {
-                "Conent-Type" : "applkication/json"
-            }
-        })
-        .then(res => res.json())
-        // .then(wine => console.log(wine))
-      }
-card.querySelector("#removeWine").addEventListener('click', () => {
-    card.remove();
-    removeWine(wine.id);
-})
+    function removeWine(id) {
+      fetch(`http://localhost:3000/wines/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Conent-Type": "applkication/json",
+        },
+      }).then((res) => res.json());
+    }
+    card.querySelector("#removeWine").addEventListener("click", () => {
+      card.remove();
+      removeWine(wine.id);
+    });
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
       if (wine.year) {
         img.src = wine.backImageURL;
       } else {
         img.src = wine.frontImageURL;
-      };
+      }
 
-      card.querySelector(".ratings").addEventListener("change", (e) => { wine.totalUserRatings +=1;
-        wine.yourRating = parseInt(e.target.value); wine.ratingsTally += parseInt(e.target.value);
-        wine.averageUserRating = Math.ceil(wine.ratingsTally/wine.totalUserRatings);
-        card.querySelector(".avgRtng").textContent = `average user rating: ${wine.averageUserRating}`;
-   updateRatings(wine);
+      card.querySelector(".ratings").addEventListener("change", (e) => {
+        wine.totalUserRatings += 1;
+        wine.yourRating = parseInt(e.target.value);
+        wine.ratingsTally += parseInt(e.target.value);
+        wine.averageUserRating = Math.ceil(
+          wine.ratingsTally / wine.totalUserRatings
+        );
+        card.querySelector(
+          ".avgRtng"
+        ).textContent = `average user rating: ${wine.averageUserRating}`;
+        updateRatings(wine);
+      });
     });
-
-
-  });
 
     collection.appendChild(card);
 
-
-    // function filteredWines(array, value){
-    //     const allWines =  document.getElementById("wineList")
-    //     const fltrWines = array.filter(wine => wine.origin === value);
-    //     fltrWines.forEach((wine) => wineHandler(wine));
-    // }
-    function filteredWines(array, value){
- for (const wine of allWines){
-    const page = document.getElementById("wineList");
-    page.innerHTML = "";
-    if (wine.data === value) {
-
-        wineHandler(wine);
-    }else{
-        getAllWines()
-    }
- }};
-
-    document.getElementById("regions").addEventListener("change", (event) => getFilteredWines(event.target.value)
-    )
-}});
-
-
+    document
+      .getElementById("regions")
+      .addEventListener("change", (event) =>
+        getFilteredWines(event.target.value)
+      );
+  }
+});
