@@ -32,17 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 function getFilteredWines(value) {
-    fetch("http://localhost:3000/wines")
+    const page = document.getElementById("wineList");
+    page.innerHTML = "";
+     fetch("http://localhost:3000/wines")
     .then((res) => res.json())
-    .then((wineData) => wineData.filter(() => filteredWines(value)));
-    function filteredWines(value){
-           const fltrWines = wineData.filter(wine => wine.origin === value);
-             fltrWines.forEach((wine) => wineHandler(wine));
+    .then((wineData) => {
+        page.innerHTML = "";
+        let filteredWines = wineData.filter(wine => wine.origin === value);
+        filteredWines.forEach(wineHandler)});
+    }
     
+ 
         
-           }
         
-        };
     
     
 
@@ -151,7 +153,17 @@ card.querySelector("#removeWine").addEventListener('click', () => {
     //     const fltrWines = array.filter(wine => wine.origin === value);
     //     fltrWines.forEach((wine) => wineHandler(wine));
     // }
-    
+    function filteredWines(array, value){
+ for (const wine of allWines){
+    const page = document.getElementById("wineList");
+    page.innerHTML = "";
+    if (wine.data === value) {
+
+        wineHandler(wine);
+    }else{
+        getAllWines()
+    }
+ }};
 
     document.getElementById("regions").addEventListener("change", (event) => getFilteredWines(event.target.value)
     )
