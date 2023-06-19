@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   getAllWines();
 
-  const input = document.querySelector("input");
+//   const input = document.querySelector("input");
   const form = document.getElementById("form");
   const addWine = document.querySelector(".addWine");
 
