@@ -113,9 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
       card.remove();
       removeWine(wine.id);
     });
+
+    
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
-      if (wine.year) {
+      if (wine.frontImageURL) {
         img.src = wine.backImageURL;
       } else {
         img.src = wine.frontImageURL;

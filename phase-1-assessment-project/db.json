@@ -46,10 +46,10 @@
       "year": 2020,
       "origin": "Italy",
       "price": "$11.99",
-      "yourRating": 3,
-      "totalUserRatings": 1,
-      "ratingsTally": 3,
-      "averageUserRating": 3,
+      "yourRating": 5,
+      "totalUserRatings": 2,
+      "ratingsTally": 8,
+      "averageUserRating": 4,
       "id": 4
     },
     {
@@ -59,10 +59,10 @@
       "year": 2017,
       "origin": "Italy",
       "price": "$15.99",
-      "yourRating": 3,
-      "totalUserRatings": 1,
-      "ratingsTally": 3,
-      "averageUserRating": 3,
+      "yourRating": 4,
+      "totalUserRatings": 2,
+      "ratingsTally": 7,
+      "averageUserRating": 4,
       "id": 5
     },
     {
