@@ -8,7 +8,7 @@
       "origin": "France",
       "price": "$8.99",
       "yourRating": 5,
-      "totalUserRatings": 6,
+      "totalUserRatings": 13,
       "ratingsTally": 4,
       "averageUserRating": 4,
       "id": 1
@@ -20,9 +20,9 @@
       "year": 2021,
       "origin": "France",
       "price": "$12.99",
-      "yourRating": 1,
+      "yourRating": 4,
       "totalUserRatings": 7,
-      "ratingsTally": 5,
+      "ratingsTally": 18,
       "averageUserRating": 3,
       "id": 2
     },
@@ -33,10 +33,10 @@
       "year": 2020,
       "origin": "France",
       "price": "$7.99",
-      "yourRating": 1,
-      "totalUserRatings": 1,
-      "ratingsTally": 1,
-      "averageUserRating": 1,
+      "yourRating": 5,
+      "totalUserRatings": 5,
+      "ratingsTally": 15,
+      "averageUserRating": 3,
       "id": 3
     },
     {
@@ -61,7 +61,7 @@
       "price": "$15.99",
       "yourRating": 4,
       "totalUserRatings": 2,
-      "ratingsTally": 7,
+      "ratingsTally": 2,
       "averageUserRating": 4,
       "id": 5
     },
@@ -72,10 +72,10 @@
       "year": 2020,
       "origin": "Spain",
       "price": "$6.99",
-      "yourRating": 5,
-      "totalUserRatings": 2,
-      "ratingsTally": 7,
-      "averageUserRating": 4,
+      "yourRating": 2,
+      "totalUserRatings": 5,
+      "ratingsTally": 11,
+      "averageUserRating": 3,
       "id": 6
     },
     {
@@ -98,9 +98,9 @@
       "year": 2020,
       "origin": "France",
       "price": "$22.99",
-      "yourRating": 4,
-      "totalUserRatings": 1,
-      "ratingsTally": 4,
+      "yourRating": 2,
+      "totalUserRatings": 17,
+      "ratingsTally": 61,
       "averageUserRating": 4,
       "id": 8
     },

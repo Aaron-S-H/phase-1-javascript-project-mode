@@ -1,16 +1,7 @@
-// to do:
-// -basic HTML/CSS/JS layout
-// -check if JS and css is linked properly
-// -take wine photos
-// -get url’s for each photo
-// -build server user
-
-
-// create a dynamic wine application that loads asynchronously
 document.addEventListener("DOMContentLoaded", () => {
   getAllWines();
 
-  //   const input = document.querySelector("input");
+//   const input = document.querySelector("input");
   const form = document.getElementById("form");
   const addWine = document.querySelector(".addWine");
 
@@ -66,9 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputUrl = document.getElementById("inputURL");
   const inputOrigin = document.getElementById("inputOrigin");
   const inputYear = document.getElementById("inputYear");
-
-  // there will also be a submit wine form that sends a post to server
-
   document.querySelector("#submitNew").addEventListener("click", (event) => {
     event.preventDefault();
     let wineObj = {
@@ -86,12 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     updateNewWine(wineObj);
   });
-
-  // document.eventListener loads a wine handler that makes request to db.json server and populates the dom. each wine card will have the following info/features:
-
-  // name
-  // origin
-  // year
 
   function wineHandler(wine) {
     const collection = document.querySelector("ul");
@@ -132,18 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
       removeWine(wine.id);
     });
 
-    // the photos will have a mouseover event that shows the back photo when event is triggered.
-
+    
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
-      if (wine.frontImageURL) {
+      if (wine.year) {
         img.src = wine.backImageURL;
       } else {
         img.src = wine.frontImageURL;
       }
-
-      // avg user rating (number of ratings /total of ratings or reduce sum)
-      // rating submission button (avg usr rating will be content)
 
       card.querySelector(".ratings").addEventListener("change", (e) => {
         wine.totalUserRatings += 1;
