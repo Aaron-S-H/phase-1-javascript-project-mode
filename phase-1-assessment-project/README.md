@@ -1,8 +1,8 @@
-#Secret Somm
+Secret Somm
 Secret Somm is a wine application where users can rate, or search wines from a database and also add ones they've found.
 Secret Somm removes the pressure of choosing wines like having a sommelier standing next to you to assist you. 
 
-#Features
+Features
 
 Each wine has a front and back photo for the user to analyze as though the bottle were in their hand! Simply scroll over each photo to view. Users can rate the wine for themselves and also see the average user rating for each wine.
 
