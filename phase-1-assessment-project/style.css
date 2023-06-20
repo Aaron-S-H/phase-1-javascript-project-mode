@@ -82,7 +82,11 @@ p {
     height: 12rem;
     width: auto;
   }
-
+  .changed {
+    justify-self: center;
+    height: 12rem;
+    width: auto;
+  }
   
 #regionMenu {
     margin-left: 80px;

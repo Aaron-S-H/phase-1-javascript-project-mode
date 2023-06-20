@@ -21,9 +21,9 @@
       "origin": "France",
       "price": "$12.99",
       "yourRating": 4,
-      "totalUserRatings": 7,
-      "ratingsTally": 18,
-      "averageUserRating": 3,
+      "totalUserRatings": 11,
+      "ratingsTally": 34,
+      "averageUserRating": 4,
       "id": 2
     },
     {
@@ -33,9 +33,9 @@
       "year": 2020,
       "origin": "France",
       "price": "$7.99",
-      "yourRating": 5,
-      "totalUserRatings": 5,
-      "ratingsTally": 15,
+      "yourRating": 2,
+      "totalUserRatings": 7,
+      "ratingsTally": 21,
       "averageUserRating": 3,
       "id": 3
     },
@@ -47,9 +47,9 @@
       "origin": "Italy",
       "price": "$11.99",
       "yourRating": 5,
-      "totalUserRatings": 2,
-      "ratingsTally": 8,
-      "averageUserRating": 4,
+      "totalUserRatings": 3,
+      "ratingsTally": 13,
+      "averageUserRating": 5,
       "id": 4
     },
     {
@@ -72,10 +72,10 @@
       "year": 2020,
       "origin": "Spain",
       "price": "$6.99",
-      "yourRating": 2,
-      "totalUserRatings": 5,
-      "ratingsTally": 11,
-      "averageUserRating": 3,
+      "yourRating": 1,
+      "totalUserRatings": 6,
+      "ratingsTally": 12,
+      "averageUserRating": 2,
       "id": 6
     },
     {
@@ -98,9 +98,9 @@
       "year": 2020,
       "origin": "France",
       "price": "$22.99",
-      "yourRating": 2,
-      "totalUserRatings": 17,
-      "ratingsTally": 61,
+      "yourRating": 1,
+      "totalUserRatings": 18,
+      "ratingsTally": 62,
       "averageUserRating": 4,
       "id": 8
     },
@@ -111,9 +111,9 @@
       "year": 2020,
       "origin": "California",
       "price": "$16.99",
-      "yourRating": 1,
-      "totalUserRatings": 4,
-      "ratingsTally": 10,
+      "yourRating": 3,
+      "totalUserRatings": 6,
+      "ratingsTally": 14,
       "averageUserRating": 3,
       "id": 9
     },
@@ -137,10 +137,10 @@
       "year": 2021,
       "origin": "Italy",
       "price": "$10.99",
-      "yourRating": 3,
-      "totalUserRatings": 1,
-      "ratingsTally": 3,
-      "averageUserRating": 3,
+      "yourRating": 5,
+      "totalUserRatings": 2,
+      "ratingsTally": 8,
+      "averageUserRating": 4,
       "id": 11
     }
   ]

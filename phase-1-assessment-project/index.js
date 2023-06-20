@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNewWine(wineObj);
   });
 
+
+
   function wineHandler(wine) {
     const collection = document.querySelector("ul");
     let card = document.createElement("li");
@@ -101,27 +103,18 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     card.innerHTML = cardFront;
-    function removeWine(id) {
-      fetch(`http://localhost:3000/wines/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Conent-Type": "applkication/json",
-        },
-      }).then((res) => res.json());
-    }
-    card.querySelector("#removeWine").addEventListener("click", () => {
-      card.remove();
-      removeWine(wine.id);
-    });
+
 
     
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
-      if (wine.year) {
+      if (img.className !== "changed") {
         img.src = wine.backImageURL;
+        img.className = "changed";
       } else {
         img.src = wine.frontImageURL;
-      }
+        img.className = "wine-photo";
+      }});
 
       card.querySelector(".ratings").addEventListener("change", (e) => {
         wine.totalUserRatings += 1;
@@ -134,8 +127,22 @@ document.addEventListener("DOMContentLoaded", () => {
           ".avgRtng"
         ).textContent = `average user rating: ${wine.averageUserRating}`;
         updateRatings(wine);
-      });
+      
     });
+
+    function removeWine(id) {
+        let card = document.querySelector("li");
+           fetch(`http://localhost:3000/wines/${id}`, {
+             method: "DELETE",
+             headers: {
+               "Conent-Type": "applkication/json",
+             },
+           }).then((res) => res.json());
+         }
+         card.querySelector("#removeWine").addEventListener("click", () => {
+           card.remove();
+           removeWine(wine.id);
+         });
 
     collection.appendChild(card);
 
@@ -144,5 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .addEventListener("change", (event) =>
         getFilteredWines(event.target.value)
       );
-  }
+  };
+
+
 });
