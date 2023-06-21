@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   getAllWines();
 
-//   const input = document.querySelector("input");
+
  const page = document.getElementById("wineList");
   const form = document.getElementById("form");
   const addWine = document.querySelector(".addWine");
@@ -43,8 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateNewWine(wineObj) {
-    
-    // page.innerHTML= "";
     fetch("http://localhost:3000/wines", {
       method: "POST",
       headers: {
@@ -91,8 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const collection = document.querySelector("ul");
     let card = document.createElement("li");
     card.className = "card";
-    const form = document.getElementById("form");
-    let cardFront = `
+    card.innerHTML = `
     <h2 class = "cardFront">${wine.name}</h2>
     <p>origin: ${wine.origin}<br>
       year: ${wine.year}<br></p>
@@ -111,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
    <br>
     `;
 
-    card.innerHTML = cardFront;
+   
 
 
     
@@ -140,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function removeWine(id) {
-        let card = document.querySelector("li");
            fetch(`http://localhost:3000/wines/${id}`, {
              method: "DELETE",
              headers: {
