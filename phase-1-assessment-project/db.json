@@ -8,7 +8,7 @@
       "origin": "France",
       "price": "$8.99",
       "yourRating": 5,
-      "totalUserRatings": 13,
+      "totalUserRatings": 1,
       "ratingsTally": 4,
       "averageUserRating": 4,
       "id": 1
@@ -47,7 +47,7 @@
       "origin": "Italy",
       "price": "$11.99",
       "yourRating": 2,
-      "totalUserRatings": 5,
+      "totalUserRatings": 2,
       "ratingsTally": 16,
       "averageUserRating": 4,
       "id": 4
@@ -59,10 +59,10 @@
       "year": 2017,
       "origin": "Italy",
       "price": "$15.99",
-      "yourRating": 1,
-      "totalUserRatings": 7,
-      "ratingsTally": 14,
-      "averageUserRating": 2,
+      "yourRating": 2,
+      "totalUserRatings": 1,
+      "ratingsTally": 2,
+      "averageUserRating": 3,
       "id": 5
     },
     {
@@ -99,8 +99,8 @@
       "origin": "France",
       "price": "$22.99",
       "yourRating": 1,
-      "totalUserRatings": 18,
-      "ratingsTally": 62,
+      "totalUserRatings": 1,
+      "ratingsTally": 2,
       "averageUserRating": 4,
       "id": 8
     },

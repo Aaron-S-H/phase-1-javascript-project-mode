@@ -31,8 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getFilteredWines(value) {
-   
-    page.innerHTML = "";
     fetch("http://localhost:3000/wines")
       .then((res) => res.json())
       .then((wineData) => {
@@ -80,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "",
     };
     updateNewWine(wineObj);
+    form.reset();
 
  });
 
@@ -107,11 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <button id="removeWine"> remove this wine</button>
    <br>
     `;
-
-   
-
-
-    
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
       if (img.className !== "changed") {
