@@ -17,3 +17,5 @@ There is a "search by region" feature that filters the wines on display by place
 
  ![Alt text](photos/submit.png)
 
+ With the document.DOMContentLoaded and the "search by region" filter the GET request to the server is being fulfilled. With the "rate this wine" feature the PATCH request to the serveris being fulfilled. Submit a new wine fulfills the POST request, and finally the "remove this wine"feature fulfills the DELETE request.
+

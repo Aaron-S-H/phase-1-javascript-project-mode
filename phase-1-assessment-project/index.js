@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getAllWines();
 
 //   const input = document.querySelector("input");
+ const page = document.getElementById("wineList");
   const form = document.getElementById("form");
   const addWine = document.querySelector(".addWine");
 
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getFilteredWines(value) {
-    const page = document.getElementById("wineList");
+   
     page.innerHTML = "";
     fetch("http://localhost:3000/wines")
       .then((res) => res.json())
@@ -42,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateNewWine(wineObj) {
+    
+    page.innerHTML= "";
     fetch("http://localhost:3000/wines", {
       method: "POST",
       headers: {
@@ -51,13 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((res) => res.json())
       .then(wineHandler(wineObj));
-  }
+      getAllWines();
+};
 
-  const inputName = document.getElementById("inputName");
+  
+
+
+   const inputName = document.getElementById("inputName");
   const inputUrl = document.getElementById("inputURL");
   const inputOrigin = document.getElementById("inputOrigin");
   const inputYear = document.getElementById("inputYear");
-  document.querySelector("#submitNew").addEventListener("click", (event) => {
+  const addWineForm =  document.querySelector("#submitNew");
+ addWineForm.addEventListener("click", (event) => {
     event.preventDefault();
     let wineObj = {
       name: inputName.value,
@@ -73,7 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "",
     };
     updateNewWine(wineObj);
-  });
+
+ });
 
 
 
@@ -113,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.className = "changed";
       } else {
         img.src = wine.frontImageURL;
-        img.className = "wine-photo";
+        img.className = "wine-photo"
       }});
 
       card.querySelector(".ratings").addEventListener("change", (e) => {

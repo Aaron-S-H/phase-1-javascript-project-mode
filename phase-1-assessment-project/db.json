@@ -20,10 +20,10 @@
       "year": 2021,
       "origin": "France",
       "price": "$12.99",
-      "yourRating": 4,
-      "totalUserRatings": 11,
-      "ratingsTally": 34,
-      "averageUserRating": 4,
+      "yourRating": 1,
+      "totalUserRatings": 3,
+      "ratingsTally": 6,
+      "averageUserRating": 2,
       "id": 2
     },
     {
@@ -46,10 +46,10 @@
       "year": 2020,
       "origin": "Italy",
       "price": "$11.99",
-      "yourRating": 5,
-      "totalUserRatings": 3,
-      "ratingsTally": 13,
-      "averageUserRating": 5,
+      "yourRating": 2,
+      "totalUserRatings": 5,
+      "ratingsTally": 16,
+      "averageUserRating": 4,
       "id": 4
     },
     {
@@ -59,10 +59,10 @@
       "year": 2017,
       "origin": "Italy",
       "price": "$15.99",
-      "yourRating": 4,
-      "totalUserRatings": 2,
-      "ratingsTally": 2,
-      "averageUserRating": 4,
+      "yourRating": 1,
+      "totalUserRatings": 7,
+      "ratingsTally": 14,
+      "averageUserRating": 2,
       "id": 5
     },
     {
@@ -73,9 +73,9 @@
       "origin": "Spain",
       "price": "$6.99",
       "yourRating": 1,
-      "totalUserRatings": 6,
-      "ratingsTally": 12,
-      "averageUserRating": 2,
+      "totalUserRatings": 2,
+      "ratingsTally": 2,
+      "averageUserRating": 1,
       "id": 6
     },
     {
@@ -111,9 +111,9 @@
       "year": 2020,
       "origin": "California",
       "price": "$16.99",
-      "yourRating": 3,
-      "totalUserRatings": 6,
-      "ratingsTally": 14,
+      "yourRating": 1,
+      "totalUserRatings": 2,
+      "ratingsTally": 6,
       "averageUserRating": 3,
       "id": 9
     },
@@ -137,10 +137,10 @@
       "year": 2021,
       "origin": "Italy",
       "price": "$10.99",
-      "yourRating": 5,
-      "totalUserRatings": 2,
-      "ratingsTally": 8,
-      "averageUserRating": 4,
+      "yourRating": 1,
+      "totalUserRatings": 3,
+      "ratingsTally": 9,
+      "averageUserRating": 3,
       "id": 11
     }
   ]
