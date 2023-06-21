@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateNewWine(wineObj) {
     
-    page.innerHTML= "";
+    // page.innerHTML= "";
     fetch("http://localhost:3000/wines", {
       method: "POST",
       headers: {
@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((res) => res.json())
       .then(wineHandler(wineObj));
+      page.innerHTML = "";
       getAllWines();
 };
 
@@ -89,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function wineHandler(wine) {
     const collection = document.querySelector("ul");
     let card = document.createElement("li");
-    let h2 = document.querySelector("h2");
     card.className = "card";
     const form = document.getElementById("form");
     let cardFront = `
