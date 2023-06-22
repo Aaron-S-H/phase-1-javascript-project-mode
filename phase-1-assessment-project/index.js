@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
 
-  //takes wineObj, sends a POST request the populates DOM with wine list
+  //takes wineObj, sends a POST request to update server with new wine, then populates DOM with wine list
 
   function updateNewWine(wineObj) {
     fetch("http://localhost:3000/wines", {
