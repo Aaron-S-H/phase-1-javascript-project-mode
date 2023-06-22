@@ -85,9 +85,9 @@
       "year": 2022,
       "origin": "Italy",
       "price": "$7.99",
-      "yourRating": 3,
-      "totalUserRatings": 1,
-      "ratingsTally": 3,
+      "yourRating": 1,
+      "totalUserRatings": 4,
+      "ratingsTally": 11,
       "averageUserRating": 3,
       "id": 7
     },

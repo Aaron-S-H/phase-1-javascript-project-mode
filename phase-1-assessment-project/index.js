@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  getAllWines();
+  fetchAllWines();
 
-
- const page = document.getElementById("wineList");
+  const page = document.getElementById("wineList");
   const form = document.getElementById("form");
   const addWine = document.querySelector(".addWine");
+
+//event listener on addWine form to hide display
 
   addWine.addEventListener("click", () => {
     if (form.className === "hidden") {
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+//PATCH request to update ratings on server/db.json
+
   function updateRatings(wine) {
     fetch(`http://localhost:3000/wines/${wine.id}`, {
       method: "PATCH",
@@ -22,13 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       body: JSON.stringify(wine),
     }).then((res) => res.json());
-  }
+  };
 
-  function getAllWines() {
+//GET request for wines
+
+  function fetchAllWines() {
     fetch("http://localhost:3000/wines")
       .then((res) => res.json())
-      .then((wineData) => wineData.forEach((wine) => wineHandler(wine)));
-  }
+      .then((wineData) => wineData.forEach((wine) => renderWine(wine)));
+  };
+
+//sends GET request to iterate through full obj array with filter method, then populates DOM with array using forEach on new array
 
   function getFilteredWines(value) {
     fetch("http://localhost:3000/wines")
@@ -36,9 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((wineData) => {
         page.innerHTML = "";
         let filteredWines = wineData.filter((wine) => wine.origin === value);
-        filteredWines.forEach(wineHandler);
+        filteredWines.forEach(renderWine);
       });
-  }
+  };
+
+
+  //takes wineObj, sends a POST request the populates DOM with wine list
 
   function updateNewWine(wineObj) {
     fetch("http://localhost:3000/wines", {
@@ -49,20 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(wineObj),
     })
       .then((res) => res.json())
-      .then(wineHandler(wineObj));
-      page.innerHTML = "";
-      getAllWines();
-};
+      .then(renderWine(wineObj));
+    page.innerHTML = "";
+    fetchAllWines();
+  };
 
-  
+//Submit wine form and wineObj variable
 
-
-   const inputName = document.getElementById("inputName");
+  const inputName = document.getElementById("inputName");
   const inputUrl = document.getElementById("inputURL");
   const inputOrigin = document.getElementById("inputOrigin");
   const inputYear = document.getElementById("inputYear");
-  const addWineForm =  document.querySelector("#submitNew");
- addWineForm.addEventListener("click", (event) => {
+  const addWineForm = document.querySelector("#submitNew");
+  addWineForm.addEventListener("click", (event) => {
     event.preventDefault();
     let wineObj = {
       name: inputName.value,
@@ -79,12 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     updateNewWine(wineObj);
     form.reset();
+  });
 
- });
+ //renders wine from obj array for DOM population
 
-
-
-  function wineHandler(wine) {
+  function renderWine(wine) {
     const collection = document.querySelector("ul");
     let card = document.createElement("li");
     card.className = "card";
@@ -95,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p class="avgRtng">average user rating: ${wine.averageUserRating}</p>
     <img src="${wine.frontImageURL}" class="wine-photo"/>
     <br>
-    <select name="userRatings" class="ratings" id="select">
+    <select name="userRatings" class="ratings">
     <option value="0">Rate This Wine</option>
     <option value="5">your rating: 5</option>
     <option value="4">your rating: 4</option>
@@ -106,6 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
     <button id="removeWine"> remove this wine</button>
    <br>
     `;
+
+    //event listener mouseover to change wine front to wine back photo
+
     let img = card.querySelector(".wine-photo");
     img.addEventListener("mouseover", () => {
       if (img.className !== "changed") {
@@ -113,37 +124,36 @@ document.addEventListener("DOMContentLoaded", () => {
         img.className = "changed";
       } else {
         img.src = wine.frontImageURL;
-        img.className = "wine-photo"
-      }});
-
-      card.querySelector(".ratings").addEventListener("change", (e) => {
-        wine.totalUserRatings += 1;
-        wine.yourRating = parseInt(e.target.value);
-        wine.ratingsTally += parseInt(e.target.value);
-        wine.averageUserRating = Math.ceil(
-          wine.ratingsTally / wine.totalUserRatings
-        );
-        card.querySelector(
-          ".avgRtng"
-        ).textContent = `average user rating: ${wine.averageUserRating}`;
-        updateRatings(wine);
-      
+        img.className = "wine-photo";
+      }
     });
 
-    function removeWine(id) {
-           fetch(`http://localhost:3000/wines/${id}`, {
-             method: "DELETE",
-             headers: {
-               "Conent-Type": "applkication/json",
-             },
-           }).then((res) => res.json());
-         }
-         card.querySelector("#removeWine").addEventListener("click", () => {
-           card.remove();
-           removeWine(wine.id);
-         });
+    //evennt listener for "rate this wine"
+
+    card.querySelector(".ratings").addEventListener("change", (e) => {
+      wine.totalUserRatings += 1;
+      wine.yourRating = parseInt(e.target.value);
+      wine.ratingsTally += parseInt(e.target.value);
+      wine.averageUserRating = Math.ceil(
+        wine.ratingsTally / wine.totalUserRatings
+      );
+      card.querySelector(
+        ".avgRtng"
+      ).textContent = `average user rating: ${wine.averageUserRating}`;
+      updateRatings(wine);
+    });
+
+    //event listener for "remove this wine"
+
+    card.querySelector("#removeWine").addEventListener("click", () => {
+      card.remove();
+      removeWine(wine.id);
+    });
 
     collection.appendChild(card);
+
+
+    //event listener on wine by regions drop down
 
     document
       .getElementById("regions")
@@ -152,5 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
       );
   };
 
-
+  function removeWine(id) {
+    fetch(`http://localhost:3000/wines/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Conent-Type": "applkication/json",
+      },
+    }).then((res) => res.json());
+  }
 });
