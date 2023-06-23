@@ -43,7 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((wineData) => {
         page.innerHTML = "";
         let filteredWines = wineData.filter((wine) => wine.origin === value);
-        filteredWines.forEach(renderWine);
+        if (value === "ALL"){
+          wineData.forEach(renderWine)
+        }else{
+        filteredWines.forEach(renderWine)};
       });
   };
 
@@ -128,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    //evennt listener for "rate this wine"
+    //event listener for "rate this wine"
 
     card.querySelector(".ratings").addEventListener("change", (e) => {
       wine.totalUserRatings += 1;
