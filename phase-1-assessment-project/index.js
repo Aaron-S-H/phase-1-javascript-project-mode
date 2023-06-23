@@ -154,16 +154,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     collection.appendChild(card);
+};
 
+   //event listener on wine by regions drop down
 
-    //event listener on wine by regions drop down
-
-    document
-      .getElementById("regions")
-      .addEventListener("change", (event) =>
-        getFilteredWines(event.target.value)
-      );
-  };
+   document
+   .getElementById("regions")
+   .addEventListener("change", (event) =>
+     getFilteredWines(event.target.value)
+   );
 
   function removeWine(id) {
     fetch(`http://localhost:3000/wines/${id}`, {
